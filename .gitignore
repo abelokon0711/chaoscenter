@@ -116,5 +116,6 @@ dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
 .mvn/wrapper/maven-wrapper.jar
-
+node_modules/
+package-lock.json
 # End of https://www.gitignore.io/api/java,maven,intellij

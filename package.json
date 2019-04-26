@@ -1,0 +1,32 @@
+{
+  "name": "chaoscenter",
+  "version": "1.0.0",
+  "description": "Demo project for Spring Boot with the Chaos Monkey library",
+  "main": "index.js",
+  "scripts": {
+    "watch": "webpack --watch -d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abelokon955/chaoscenter.git"
+  },
+  "author": "Alexander Belokon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abelokon955/chaoscenter/issues"
+  },
+  "homepage": "https://github.com/abelokon955/chaoscenter#readme",
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "rest": "^1.3.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0"
+  }
+}
