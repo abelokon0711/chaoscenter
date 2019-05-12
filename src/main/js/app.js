@@ -1,7 +1,7 @@
 const React = require("react");
 const ReactDOM = require("react-dom");
 const client = require("./client");
-import Button from "react-bootstrap/Button";
+import EmployeeList from "./components/EmployeeList";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,18 +11,13 @@ class App extends React.Component {
 
   componentDidMount() {
     client({ method: "GET", path: "/api/employees?size=10" }).done(response => {
+      console.log(response);
       this.setState({ employees: response.entity._embedded.employees });
     });
   }
 
   render() {
     return <EmployeeList employees={this.state.employees} />;
-  }
-}
-
-class EmployeeList extends React.Component {
-  render() {
-    return <Button variant="primary">Primary</Button>;
   }
 }
 
