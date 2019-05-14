@@ -1,6 +1,6 @@
-package com.studienarbeit.chaoscenter.repositories;
+package com.studienarbeit.chaoscenter.services.employees.repositories;
 
-import com.studienarbeit.chaoscenter.entities.Employees;
+import com.studienarbeit.chaoscenter.services.employees.entities.Employees;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
