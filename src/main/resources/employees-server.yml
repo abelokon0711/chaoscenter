@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: employees-service
   jpa:
     hibernate:
       ddl-auto: create
@@ -14,3 +16,16 @@ spring:
       base-path: /api
   main:
     allow-bean-definition-overriding: true
+
+# Discovery Server Access
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  healthcheck:
+    enabled: true
+  lease:
+    duration: 5
