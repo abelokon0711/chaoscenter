@@ -2,9 +2,9 @@
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
 
     <persistence-unit name="NewPersistenceUnit">
-        <class>com.studienarbeit.chaoscenter.services.employees.entities.Departments</class>
-        <class>com.studienarbeit.chaoscenter.services.employees.entities.Employees</class>
-        <class>com.studienarbeit.chaoscenter.services.employees.entities.Salaries</class>
+        <class>com.studienarbeit.chaoscenter.services.shared.entities.Departments</class>
+        <class>com.studienarbeit.chaoscenter.services.shared.entities.Employees</class>
+        <class>com.studienarbeit.chaoscenter.services.shared.entities.Salaries</class>
         <properties>
             <property name="toplink.jdbc.url"
                       value="jdbc:mysql://localhost:3306/employees?serverTimezone=Europe/Berlin"/>
