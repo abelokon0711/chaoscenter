@@ -9,14 +9,8 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Hide the access to the microservice inside this local service.
- *
- * based on https://github.com/paulc4/microservices-demo
- */
 @Service
 public class WebEmployeesService {
-
     @Autowired
     @LoadBalanced
     protected RestTemplate restTemplate;

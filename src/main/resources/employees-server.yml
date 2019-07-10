@@ -16,6 +16,11 @@ spring:
       base-path: /api
   main:
     allow-bean-definition-overriding: true
+  thymeleaf:
+    enabled: false
+
+server:
+  port: 8085
 
 # Discovery Server Access
 eureka:

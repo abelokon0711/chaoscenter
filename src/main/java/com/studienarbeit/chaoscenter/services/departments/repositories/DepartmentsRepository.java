@@ -4,7 +4,7 @@ import com.studienarbeit.chaoscenter.services.shared.entities.Departments;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource(path = "employees", collectionResourceRel =  "employees")
+@RepositoryRestResource(path = "departments", collectionResourceRel =  "departments")
 public interface DepartmentsRepository  extends PagingAndSortingRepository<Departments, Integer> {
 
 }
