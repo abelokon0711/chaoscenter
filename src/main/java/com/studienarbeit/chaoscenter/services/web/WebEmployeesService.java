@@ -1,18 +1,16 @@
 package com.studienarbeit.chaoscenter.services.web;
 
 import com.studienarbeit.chaoscenter.services.shared.entities.Employees;
+import com.studienarbeit.chaoscenter.services.web.resources.EmployeesResources;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Arrays;
-import java.util.List;
+import java.util.Collection;
 
 @Service
 public class WebEmployeesService {
     @Autowired
-    @LoadBalanced
     protected RestTemplate restTemplate;
 
     protected String serviceUrl;
@@ -21,9 +19,9 @@ public class WebEmployeesService {
         this.serviceUrl = serviceUrl.startsWith("http") ? serviceUrl  : "http://" + serviceUrl;
     }
 
-    public List<Employees> fetchEmployees(String limit) {
-        Employees[] employees = null;
-        employees =  restTemplate.getForObject(serviceUrl + "/employees?size={number}", Employees[].class, limit);
-        return Arrays.asList(employees);
+    public Collection<Employees> fetchEmployees(int limit) {
+        final ResponseEntity<EmployeesResources> employeesResponse
+                = restTemplate.getForEntity(serviceUrl + "/employees?size={number}", EmployeesResources.class, 10);
+        return employeesResponse.getBody().getContent();
     }
 }
