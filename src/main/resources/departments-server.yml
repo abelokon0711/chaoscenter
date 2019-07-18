@@ -1,6 +1,6 @@
 spring:
   application:
-    name: employees-service
+    name: departments-service
   jpa:
     hibernate:
       ddl-auto: create
@@ -20,7 +20,7 @@ spring:
     enabled: false
 
 server:
-  port: 8085
+  port: 8090
 
 # Discovery Server Access
 eureka:

@@ -1,6 +1,6 @@
-package com.studienarbeit.chaoscenter.services.employees.entities;
+package com.studienarbeit.chaoscenter.services.shared.entities;
 
-import com.studienarbeit.chaoscenter.services.employees.models.Gender;
+import com.studienarbeit.chaoscenter.services.shared.models.Gender;
 
 import javax.persistence.*;
 import java.sql.Date;

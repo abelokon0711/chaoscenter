@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: web-service
+  main:
+    allow-bean-definition-overriding: true
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+  profiles:
+    active: chaos-monkey
+
+chaos:
+  monkey:
+    enabled: true
+    watcher:
+      component: false
+      controller: false
+      repository: false
+      rest-controller: true
+      service: true
+    assaults:
+      exceptionsActive: true
+
+# Discovery Server Access
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  healthcheck:
+    enabled: true
+  lease:
+    duration: 5

@@ -1,4 +1,4 @@
-package com.studienarbeit.chaoscenter.services.employees.entities;
+package com.studienarbeit.chaoscenter.services.shared.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
