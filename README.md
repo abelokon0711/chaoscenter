@@ -16,7 +16,7 @@ git clone https://github.com/abelokon955/chaoscenter.git
 cd ./chaoscenter
 ```
 
-Init its sample database submodule:
+Initialize the sample database submodule:
 
 ```sh
 git submodule sync; git submodule update --init --recursive
@@ -29,7 +29,9 @@ cd test_db
 mysql -t < employees.sql
 ```
 
-After the application was imported into the IntelliJ IDE, the configurations for RegistrationServer, EmployeesServer, DepartmentsServer, and WebServer must be added. Finally the application can be launched by starting all the just configured Spring Boots Applications and directing to `localhost:8080` in the browser.
+After the application was imported into the IntelliJ IDE, the configurations for RegistrationServer, EmployeesServer, DepartmentsServer, and WebServer must be added. Finally the application can be launched by starting all the just configured Spring Boots Applications.
+
+The application can be reached by directing to `localhost:8080` in the browser.
 
 ### Configuration
 
