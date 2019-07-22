@@ -13,6 +13,8 @@ class App extends React.Component {
   componentDidMount() {
     this.getEmployees();
     this.getDepartments();
+    this.getEmployees = this.getEmployees.bind(this);
+    this.getDepartments = this.getDepartments.bind(this);
   }
 
   getEmployees() {
@@ -36,10 +38,10 @@ class App extends React.Component {
       <div className={"container-fluid"}>
         <div className={"row"}>
           <div className={"col"}>
-            <DepartmentList departments={this.state.departments} />
+            <DepartmentList getDepartments={this.getDepartments} departments={this.state.departments} />
           </div>
           <div className={"col"}>
-            <EmployeeList employees={this.state.employees} />
+            <EmployeeList getEmployees={this.getEmployees} employees={this.state.employees} />
           </div>
         </div>
       </div>
