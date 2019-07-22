@@ -11,14 +11,23 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    let timerstartEmployees = Date.now();
-    client({ method: "GET", path: "/api/employees?size=10" }).done(response => {
-      this.setState({ employees: {resultset: response.entity, responsetime: Date.now()-timerstartEmployees} });
-    });
+    this.getEmployees();
+    this.getDepartments();
+  }
 
-    let timerstartDepartments = Date.now();
+  getEmployees() {
+    this.setState({ employees: {resultset: []}});
+    let timerstart = Date.now();
+    client({ method: "GET", path: "/api/employees?size=10" }).done(response => {
+      this.setState({ employees: {resultset: response.entity, responsetime: Date.now()-timerstart} });
+    });
+  }
+
+  getDepartments() {
+    this.setState({ departments: {resultset: []}});
+    let timerstart = Date.now();
     client({ method: "GET", path: "/api/departments?size=10" }).done(response => {
-      this.setState({ departments: {resultset: response.entity, responsetime: Date.now()-timerstartDepartments}});
+      this.setState({ departments: {resultset: response.entity, responsetime: Date.now()-timerstart}});
     });
   }
 
