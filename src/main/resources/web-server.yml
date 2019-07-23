@@ -20,7 +20,9 @@ chaos:
       rest-controller: true
       service: true
     assaults:
+      latencyActive: true
       exceptionsActive: true
+      killApplicationActive: false
 
 # Discovery Server Access
 eureka:

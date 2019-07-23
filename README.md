@@ -45,3 +45,43 @@ EmployeesServer:    http://localhost:8085
 DepartmentsServer:  http://localhost:8090
 WebServer:          http://localhost:8080
 </pre>
+
+## How integrate Chaos Monkey into your project?
+
+First the dependency needs to be added into the `pom.xml`:
+
+```sh
+<dependency>
+  <groupId>de.codecentric</groupId>
+  <artifactId>chaos-monkey-spring-boot</artifactId>
+  <version>2.0.2-SNAPSHOT</version>
+</dependency>
+```
+
+Afterwards the following configuration can be added to the YAML of the project we want to interfere:
+
+<pre>
+chaos:
+  monkey:
+    enabled: true
+    watcher:
+      component: false
+      controller: false
+      repository: false
+      rest-controller: true
+      service: true
+    assaults:
+      level: 5
+      latencyActive: true
+      exceptionsActive: true
+      killApplicationActive: false
+</pre>
+
+With the `enable` property we tell our application to also start Chaos Monkey when being launched.
+The properties under the `watcher` section are all annotations Chaos Monkey is able to assault. 
+The `level` value in the `assaults` section  says that 1 in 5 requests will be interfered. 
+The last three configuration points are the assault types supported by Chaos Monkey.
+
+Additionally it is possible to configure the latency range and exception type. For more information
+regarding the configuration of chaos monkey, check  of the Chaos
+Monkey documentation here: [Chaos Monkey Version 2.0.2](https://codecentric.github.io/chaos-monkey-spring-boot/2.0.2/#_properties).
