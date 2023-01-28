@@ -5,8 +5,6 @@ This project originates from the study project commissioned by M. Haeussler at t
 
 ## Getting Started
 
-These instruction will briefly explain how to setup the project on a local machine.
-
 ### Setup on local machine
 
 Clone the project via git:
@@ -37,7 +35,7 @@ The application can be reached by directing to `localhost:8080` in the browser.
 
 The configurations for all applications can be found within `src/main/resources`. The settings for Chaos Monkey are set in `web-server.yml`.
 
-The applications can reached under the following URLs:
+The applications can be reached under the following URLs:
 
 <pre>
 RegistrationServer: http://localhost:8761
@@ -79,7 +77,7 @@ chaos:
 
 With the `enable` property we tell our application to also start Chaos Monkey when being launched.
 The properties under the `watcher` section are all annotations Chaos Monkey is able to assault. 
-The `level` value in the `assaults` section  says that 1 in 5 requests will be interfered. 
+The `level` value in the `assaults` section says that 1 in 5 requests will be interfered. 
 The last three configuration points are the assault types supported by Chaos Monkey.
 
 Additionally it is possible to configure the latency range and exception type. For more information
